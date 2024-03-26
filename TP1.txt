@@ -1,0 +1,47 @@
+
+
+
+1. Definir la Ley de Amdahl y graficar para distintos valores de fracción de
+   código paralelizado y número de procesadores. ¿De qué manera se puede
+   generalizar las aplicaciones de esta ley?
+ 
+	RTA: es una ley utilizada para averiguar la mejora maxima de un 
+	sistema de informacion, cuando solo una parte de esta es mejorada.
+	
+	para un programa corriendo en un procesador simple se define:
+	
+	f  : fraccion de codigo paralelizable 
+	1-f: fraccion no paralelizable 
+	T  : tiempo de ejecucion en un simple procesador
+	N  : numero de procesadores que aprovechan al maximo las porciones de codigo paralelizable.
+	
+	
+	speedup=tiempo de ejecucion en un procesador /tiempo de ejecucion en N procesadores en paralelo
+	
+	speedup=(T(1-f)+Tf)/(T(1-f)+Tf/N)=1/((1-f)+f/N)
+	
+para f pequeño , los procesadores en paralelo tienen poco efecto 
+si f->1 la mejora speedup tiende a N
+
+2.	Definir y graficar la Ley de Gustafson-Barsis. Graficar para distintos valores
+	de fracción de código paralelizado y número de procesadores y analizar.
+	Comparar resultados con el punto anterior y sacar conclusiones.
+	
+	Por el contrario la ley de Gustafson ofrece un nuevo punto de vista y así una visión positiva de las ventajas del procesamiento paralelo
+
+	S(p)=p+(1-p)(1-f)
+
+GENERALIZACIÓN DE LA LEY DE AMDAHL
+.Sin embargo la ley de Amdahl ilustra los problemas que enfrenta la industria en el
+desarrollo de procesadores multi-núcleo, en máquinas con un número cada vez mayor
+de núcleos, El software que se ejecuta en máquinas de este tipo debe adaptarse a un
+entorno de ejecución altamente paralela para aprovechar la potencia del
+procesamiento paralelo.
+.La ley de Amdahl puede ser generalizada para evaluar cualquier diseño o mejora
+técnica en un sistema informático. Considere cualquier mejora de la característica de
+un sistema que resulta en un aumento de velocidad. La aceleración se puede
+expresar como:
+
+	speedup=performance despues de la mejora/performance antes de la mejora 
+	speedup=tiempo de ejecucion antes de la mejora/tiempo de ejecucion despues de la mejora
+
